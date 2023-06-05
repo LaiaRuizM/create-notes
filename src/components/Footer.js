@@ -1,10 +1,14 @@
+import "../styles/layouts/Footer.scss";
 import Lrm from "../images/LaiaRuizM.png";
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer__container">
-        <p className="footer__text">Made with 💙 by &copy;Laia Ruiz Martínez</p>
+        <p className="footer__text">
+          Made with <i className="fa-regular fa-heart"></i> by &copy;Laia Ruiz
+          Martínez
+        </p>
         <a
           href="https://github.com/LaiaRuizM"
           title="GitHub of Laia Ruiz Martínez"

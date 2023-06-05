@@ -1,13 +1,7 @@
-/* SECCIÓN DE IMPORT */
-// - De React
-// import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-// - Nuestros
-// - Sass
+import Footer from "./Footer";
 import "../styles/App.scss";
-// - Imágenes
 import headerImg from "../images/header-img.png";
-/* SECCIÓN DEL COMPONENTE */
 function App() {
   /* VARIABLES ESTADO (DATOS) */
 
@@ -38,7 +32,7 @@ function App() {
         <section>Section left</section>
         <aside>Aside right</aside>
       </main>
-      <footer className="footer"></footer>
+      <Footer></Footer>
     </>
   );
 }

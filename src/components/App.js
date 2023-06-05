@@ -34,7 +34,10 @@ function App() {
           />
         </div>
       </header>
-      <main className="main"></main>
+      <main className="main">
+        <section>Section left</section>
+        <aside>Aside right</aside>
+      </main>
       <footer className="footer"></footer>
     </>
   );

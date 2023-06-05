@@ -16,12 +16,12 @@ function App() {
   return (
     <>
       <header className="header">
-        <h1 className="header__title">
-          What can we do today? Organize your day!
-        </h1>
         <div className="header__div">
+          <h1 className="header__div--title">
+            What can we do today? Organize your day!
+          </h1>
           <img
-            className="header__image"
+            className="header__div--image"
             src={headerImg}
             alt="Sticky notes"
             title="Sticky notes"
@@ -29,8 +29,8 @@ function App() {
         </div>
       </header>
       <main className="main">
-        <section>Section left</section>
-        <aside>Aside right</aside>
+        <section className="section">Section left</section>
+        <aside className="aside">Aside right</aside>
       </main>
       <Footer></Footer>
     </>

@@ -1,1 +1,36 @@
-/* Aquí van tus estilos */
+@import "./core/reset";
+
+.header {
+  &__div {
+    text-align: center;
+    padding: 20px;
+    &--title {
+      margin-bottom: 5px;
+      font-family: "Indie Flower", cursive;
+      font-family: "Shantell Sans", cursive;
+      font-size: 20px;
+      text-decoration: 3px rgb(56, 213, 200) dotted underline;
+    }
+    &--image {
+      width: 50%;
+    }
+  }
+}
+
+.main {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.section {
+  background-color: aqua;
+}
+
+.aside {
+  background-color: pink;
+}

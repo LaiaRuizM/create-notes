@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Footer from "./Footer";
 import "../styles/App.scss";
 import headerImg from "../images/header-img.png";
+import Aside from "./createYourNote/Aside";
 function App() {
   /* VARIABLES ESTADO (DATOS) */
 
@@ -29,8 +30,8 @@ function App() {
         </div>
       </header>
       <main className="main">
+        <Aside></Aside>
         <section className="section">Section left</section>
-        <aside className="aside">Aside right</aside>
       </main>
       <Footer></Footer>
     </>

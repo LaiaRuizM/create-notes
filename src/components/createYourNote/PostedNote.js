@@ -1,4 +1,12 @@
-const PostedNote = ({ handleCreateNewNote, newNote, allCategory }) => {
+const PostedNote = ({
+  handleCreateNewNote,
+  newNote,
+  allCategory,
+  noteIsEditing,
+  resetPostedNote,
+  handleUpdateNote,
+  handleInputNote,
+}) => {
   const categorySelected = allCategory.map((category, index) => {
     return (
       <option key={index} value={category.name}>
@@ -6,9 +14,26 @@ const PostedNote = ({ handleCreateNewNote, newNote, allCategory }) => {
       </option>
     );
   });
+
+  const handleResetNote = (event) => {
+    event.preventDefault();
+    resetPostedNote();
+  };
+
+  const handlePostNote = (event) => {
+    event.preventDefault();
+    noteIsEditing ? handleUpdateNote() : handleCreateNewNote();
+  };
+
+  const handleInputChange = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    handleInputNote(name, value);
+  };
+
   return (
     <section>
-      <fieldset>
+      <fieldset onReset={handleResetNote} onSubmit={handlePostNote}>
         <legend>CREATE YOUR NOTE HERE:</legend>
         <div>
           <label htmlFor="title">Title</label>
@@ -18,30 +43,36 @@ const PostedNote = ({ handleCreateNewNote, newNote, allCategory }) => {
             required
             placeholder="Introduce your title:"
             maxLength="20"
+            name="title"
             title="You can introduce here the title of your to do"
+            onChange={handleInputChange}
           />
           <label htmlFor="content">Description</label>
           <textarea
             value={newNote.content}
             name="content"
-            // id=""
             cols="25"
             rows="5"
             placeholder="Introduce your description"
             maxLength="100"
+            onChange={handleInputChange}
           ></textarea>
           <label htmlFor="categoryTheme">Category</label>
           <select
             name="categoryTheme"
-            //   id=""
             value={newNote.categoryTheme}
+            onChange={handleInputChange}
           >
             {categorySelected}
           </select>
         </div>
         <div>
-          <button type="submit">Create note</button>
-          <button type="reset">Delete note</button>
+          <button type="submit">
+            {noteIsEditing ? "Update note" : "Post note"}
+          </button>
+          <button type="reset">
+            {noteIsEditing ? "Dismiss changes" : "Dismiss note"}
+          </button>
         </div>
       </fieldset>
     </section>

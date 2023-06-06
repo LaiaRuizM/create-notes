@@ -25,13 +25,13 @@ function App() {
   const [noteIsEditing, setNoteIsEditing] = useState(false);
   const [indexIsEditing, setIndexIsEditing] = useState("");
 
-  // useEffect(() => {
-  //   const data = JSON.parse(localStorage.getItem("userNotes"));
-  //   if (data) {
-  //     setAllNotes(data.allNotes);
-  // setNewId(data.newId);
-  //   }
-  // }, []);
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("userNotes"));
+    if (data) {
+      setAllNotes(data.allNotes);
+      setNewId(data.newId);
+    }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("userNotes", JSON.stringify({ allNotes }));

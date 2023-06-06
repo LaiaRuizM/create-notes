@@ -21,25 +21,20 @@ function App() {
     categoryTheme: "general",
   });
 
-  useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("userNotes"));
-    if (data) {
-      setAllNotes(data.allNotes);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const data = JSON.parse(localStorage.getItem("userNotes"));
+  //   if (data) {
+  //     setAllNotes(data.allNotes);
+  //   }
+  // }, []);
 
   useEffect(() => {
     localStorage.setItem("userNotes", JSON.stringify({ allNotes }));
   });
 
-  /* FUNCIONES HANDLER */
   const handleCreateNewNote = () => {
     setAllNotes((eachNote) => eachNote.concat(newNote));
   };
-
-  /* FUNCIONES Y VARIABLES AUXILIARES PARA PINTAR EL HTML */
-
-  /* PROP-TYPES */
 
   return (
     <>
@@ -57,7 +52,11 @@ function App() {
         </div>
       </header>
       <main className="main">
-        <Aside></Aside>
+        <Aside
+          handleCreateNewNote={handleCreateNewNote}
+          newNote={newNote}
+          allCategory={allCategory}
+        ></Aside>
         <section className="section">Section left</section>
       </main>
       <Footer></Footer>

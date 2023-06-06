@@ -1,9 +1,13 @@
 import PostedNote from "./PostedNote";
 
-const Aside = () => {
+const Aside = ({ handleCreateNewNote, newNote, allCategory }) => {
   return (
     <aside className="aside">
-      <PostedNote></PostedNote>
+      <PostedNote
+        handleCreateNewNote={handleCreateNewNote}
+        newNote={newNote}
+        allCategory={allCategory}
+      ></PostedNote>
     </aside>
   );
 };

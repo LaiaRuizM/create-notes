@@ -1,4 +1,11 @@
-const PostedNote = () => {
+const PostedNote = ({ handleCreateNewNote, newNote, allCategory }) => {
+  const categorySelected = allCategory.map((category, index) => {
+    return (
+      <option key={index} value={category.name}>
+        #{category.name}
+      </option>
+    );
+  });
   return (
     <section>
       <fieldset>
@@ -6,7 +13,7 @@ const PostedNote = () => {
         <div>
           <label htmlFor="title">Title</label>
           <input
-            // value={""}
+            value={newNote.title}
             type="text"
             required
             placeholder="Introduce your title:"
@@ -15,7 +22,7 @@ const PostedNote = () => {
           />
           <label htmlFor="content">Description</label>
           <textarea
-            // value=""
+            value={newNote.content}
             name="content"
             // id=""
             cols="25"
@@ -27,13 +34,9 @@ const PostedNote = () => {
           <select
             name="categoryTheme"
             //   id=""
-            //   value=""
+            value={newNote.categoryTheme}
           >
-            <option value="color1">Color one</option>
-            <option value="color2">Color two</option>
-            <option value="color3">Color three</option>
-            <option value="color4">Color four</option>
-            <option value="color5">Color five</option>
+            {categorySelected}
           </select>
         </div>
         <div>

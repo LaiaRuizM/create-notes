@@ -1,4 +1,5 @@
 import Aside from "./createYourNote/Aside";
+import NoteList from "./dashboardNotes/NoteList";
 import Footer from "./Footer";
 import "../styles/App.scss";
 import headerImg from "../images/header-img.png";
@@ -93,7 +94,11 @@ function App() {
           handleUpdateNote={handleUpdateNote}
           handleInputNote={handleInputNote}
         ></Aside>
-        <section className="section">Section left</section>
+        <NoteList
+          allNotes={allNotes}
+          newNote={newNote}
+          allCategory={allCategory}
+        ></NoteList>
       </main>
       <Footer></Footer>
     </>

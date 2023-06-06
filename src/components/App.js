@@ -57,6 +57,17 @@ function App() {
     setAllNotes(updatingPostingNote);
   };
 
+  const handleInputNote = (name, value) => {
+    if (allNotes.length === 0) {
+      setNewId(1);
+    }
+    if (newNote.id !== newId) {
+      setNewNote({ ...newNote, id: newId, [name]: value });
+    } else {
+      setNewNote({ ...newNote, [name]: value });
+    }
+  };
+
   return (
     <>
       <header className="header">
@@ -79,6 +90,8 @@ function App() {
           allCategory={allCategory}
           noteIsEditing={noteIsEditing}
           resetPostedNote={resetPostedNote}
+          handleUpdateNote={handleUpdateNote}
+          handleInputNote={handleInputNote}
         ></Aside>
         <section className="section">Section left</section>
       </main>

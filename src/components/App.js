@@ -23,6 +23,7 @@ function App() {
     id: 0,
   });
   const [noteIsEditing, setNoteIsEditing] = useState(false);
+  const [indexIsEditing, setIndexIsEditing] = useState("");
 
   // useEffect(() => {
   //   const data = JSON.parse(localStorage.getItem("userNotes"));
@@ -44,6 +45,16 @@ function App() {
   const resetPostedNote = () => {
     setNewNote({ ...newNote, title: ", content: ", categoryTheme: "general" });
     setNoteIsEditing(false);
+  };
+
+  const handleUpdateNote = () => {
+    setNoteIsEditing(false);
+    resetPostedNote();
+    const updatingPostingNote = allNotes;
+    updatingPostingNote[indexIsEditing].title = newNote.title;
+    updatingPostingNote[indexIsEditing].content = newNote.content;
+    updatingPostingNote[indexIsEditing].categoryTheme = newNote.categoryTheme;
+    setAllNotes(updatingPostingNote);
   };
 
   return (

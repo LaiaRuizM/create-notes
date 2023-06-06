@@ -33,6 +33,9 @@ function App() {
   });
 
   /* FUNCIONES HANDLER */
+  const handleCreateNewNote = () => {
+    setAllNotes((eachNote) => eachNote.concat(newNote));
+  };
 
   /* FUNCIONES Y VARIABLES AUXILIARES PARA PINTAR EL HTML */
 

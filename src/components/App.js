@@ -1,12 +1,36 @@
-import { Route, Routes } from "react-router-dom";
+import Aside from "./createYourNote/Aside";
 import Footer from "./Footer";
 import "../styles/App.scss";
 import headerImg from "../images/header-img.png";
-import Aside from "./createYourNote/Aside";
-function App() {
-  /* VARIABLES ESTADO (DATOS) */
+import { useEffect, useState } from "react";
 
-  /* EFECTOS (código cuando carga la página) */
+function App() {
+  const [allNotes, setAllNotes] = useState([]);
+  const [allCategory, setAllCategory] = useState([
+    { name: "general", color: "#86E1E0" },
+    { name: "activities", color: "#FDE780" },
+    { name: "work", color: "#B494C5" },
+    { name: "personal", color: "#C5EA8B" },
+    { name: "birthday", color: "#F7ABC7" },
+    { name: "urgent", color: "#FBBAA4" },
+    { name: "ASAP", color: "#EE9392" },
+  ]);
+  const [newNote, setNewNote] = useState({
+    title: "",
+    content: "",
+    categoryTheme: "general",
+  });
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("userNotes"));
+    if (data) {
+      setAllNotes(data.allNotes);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("userNotes", JSON.stringify({ allNotes }));
+  });
 
   /* FUNCIONES HANDLER */
 

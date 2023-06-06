@@ -15,16 +15,20 @@ function App() {
     { name: "urgent", color: "#FBBAA4" },
     { name: "ASAP", color: "#EE9392" },
   ]);
+  const [newId, setNewId] = useState(1);
   const [newNote, setNewNote] = useState({
     title: "",
     content: "",
     categoryTheme: "general",
+    id: 0,
   });
+  const [noteIsEditing, setNoteIsEditing] = useState(false);
 
   // useEffect(() => {
   //   const data = JSON.parse(localStorage.getItem("userNotes"));
   //   if (data) {
   //     setAllNotes(data.allNotes);
+  // setNewId(data.newId);
   //   }
   // }, []);
 
@@ -34,6 +38,12 @@ function App() {
 
   const handleCreateNewNote = () => {
     setAllNotes((eachNote) => eachNote.concat(newNote));
+    setNewId(newId + 1);
+  };
+
+  const resetPostedNote = () => {
+    setNewNote({ ...newNote, title: ", content: ", categoryTheme: "general" });
+    setNoteIsEditing(false);
   };
 
   return (
@@ -56,6 +66,8 @@ function App() {
           handleCreateNewNote={handleCreateNewNote}
           newNote={newNote}
           allCategory={allCategory}
+          noteIsEditing={noteIsEditing}
+          resetPostedNote={resetPostedNote}
         ></Aside>
         <section className="section">Section left</section>
       </main>

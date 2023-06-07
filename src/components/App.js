@@ -35,12 +35,13 @@ function App() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("userNotes", JSON.stringify({ allNotes }));
+    localStorage.setItem("userNotes", JSON.stringify({ allNotes, newId }));
   });
 
   const handleCreateNewNote = () => {
     setAllNotes((eachNote) => eachNote.concat(newNote));
     setNewId(newId + 1);
+    resetPostedNote();
   };
 
   const resetPostedNote = () => {
@@ -79,9 +80,9 @@ function App() {
   };
 
   const handleEditNote = (index) => {
-    setIndexIsEditing(index);
-    setNoteIsEditing(true);
     setNewNote(allNotes[index]);
+    setNoteIsEditing(true);
+    setIndexIsEditing(index);
   };
 
   return (

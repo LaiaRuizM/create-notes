@@ -1,4 +1,5 @@
 import NoteItem from "./NoteItem";
+import "../../styles/layouts/NoteList.scss";
 
 const NoteList = ({
   allNotes,
@@ -25,15 +26,15 @@ const NoteList = ({
     );
   });
   return (
-    <section>
+    <section className="note__section">
       {allNotes.length !== 0 ? (
-        <div>
+        <div className="note__section__btn">
           <button onClick={deleteAllNotes}>Delete all notes</button>
         </div>
       ) : (
         ""
       )}
-      <ul>{eachNote}</ul>
+      <ul className="note__section__list">{eachNote}</ul>
     </section>
   );
 };

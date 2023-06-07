@@ -1,0 +1,26 @@
+@import "../core/reset.scss";
+
+.note__section {
+  width: 100%;
+  //   background-color: $board-color;
+  &__list {
+    overflow: hidden;
+    padding: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    // @include tablet {
+    justify-content: flex-start;
+  }
+  &__btn {
+    // @include buttons($font-color-secondary, $background-color, 170px);
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    // @include tablet {
+    justify-content: flex-end;
+    margin: 10px 50px;
+  }
+  //   }
+  // }
+}

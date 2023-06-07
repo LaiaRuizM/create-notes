@@ -7,10 +7,15 @@ const PostedNote = ({
   handleUpdateNote,
   handleInputNote,
 }) => {
-  const categorySelected = allCategory.map((category, index) => {
+  const handleInputChange = (ev) => {
+    const { name, value } = ev.target;
+    handleInputNote(name, value);
+  };
+
+  const categorySelected = allCategory.map((categoryTheme, index) => {
     return (
-      <option key={index} value={category.name}>
-        #{category.name}
+      <option key={index} value={categoryTheme.name}>
+        #{categoryTheme.name}
       </option>
     );
   });
@@ -25,16 +30,12 @@ const PostedNote = ({
     noteIsEditing ? handleUpdateNote() : handleCreateNewNote();
   };
 
-  const handleInputChange = (event) => {
-    event.preventDefault();
-    const { name, value } = event.target;
-    handleInputNote(name, value);
-  };
-
   return (
     <section>
-      <fieldset onReset={handleResetNote} onSubmit={handlePostNote}>
-        <legend>CREATE YOUR NOTE HERE:</legend>
+      <form onReset={handleResetNote} onSubmit={handlePostNote}>
+        <legend>
+          {noteIsEditing ? "Edit your note:" : "Create your note:"}
+        </legend>
         <div>
           <label htmlFor="title">Title</label>
           <input
@@ -74,7 +75,7 @@ const PostedNote = ({
             {noteIsEditing ? "Dismiss changes" : "Dismiss note"}
           </button>
         </div>
-      </fieldset>
+      </form>
     </section>
   );
 };

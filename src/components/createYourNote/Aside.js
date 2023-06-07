@@ -1,4 +1,5 @@
 import PostedNote from "./PostedNote";
+import "../../styles/layouts/Aside.scss";
 
 const Aside = ({
   handleCreateNewNote,

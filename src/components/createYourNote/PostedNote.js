@@ -1,3 +1,5 @@
+import "../../styles/layouts/PostedNote.scss";
+
 const PostedNote = ({
   handleCreateNewNote,
   newNote,
@@ -32,13 +34,20 @@ const PostedNote = ({
 
   return (
     <section>
-      <form onReset={handleResetNote} onSubmit={handlePostNote}>
-        <legend>
+      <form
+        className="form"
+        onReset={handleResetNote}
+        onSubmit={handlePostNote}
+      >
+        <legend className="form__legend">
           {noteIsEditing ? "Edit your note:" : "Create your note:"}
         </legend>
-        <div>
-          <label htmlFor="title">Title</label>
+        <div className="form__container">
+          <label className="form__container__label" htmlFor="title">
+            Title:
+          </label>
           <input
+            className="form__container__input"
             value={newNote.title}
             type="text"
             required
@@ -48,8 +57,11 @@ const PostedNote = ({
             title="You can introduce here the title of your to do"
             onChange={handleInputChange}
           />
-          <label htmlFor="content">Description</label>
+          <label className="form__container__label" htmlFor="content">
+            Description:
+          </label>
           <textarea
+            className="form__container__textarea"
             value={newNote.content}
             name="content"
             cols="25"
@@ -58,16 +70,19 @@ const PostedNote = ({
             maxLength="100"
             onChange={handleInputChange}
           ></textarea>
-          <label htmlFor="categoryTheme">Category</label>
+          <label className="form__container__label" htmlFor="categoryTheme">
+            Category
+          </label>
           <select
+            className="form__container__select"
             name="categoryTheme"
-            value={newNote.categoryTheme}
             onChange={handleInputChange}
+            value={newNote.categoryTheme}
           >
             {categorySelected}
           </select>
         </div>
-        <div>
+        <div className="form__btns">
           <button type="submit">
             {noteIsEditing ? "Update note" : "Post note"}
           </button>

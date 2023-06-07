@@ -74,8 +74,14 @@ function App() {
     setNewId(1);
   };
 
-  const handleDeleteNote = (i) => {
-    setAllNotes(allNotes.filter((note, index) => index !== i));
+  const handleDeleteNote = (index) => {
+    setAllNotes(allNotes.filter((note, i) => i !== index));
+  };
+
+  const handleEditNote = (index) => {
+    setIndexIsEditing(index);
+    setNoteIsEditing(true);
+    setNewNote(allNotes[index]);
   };
 
   return (
@@ -109,6 +115,7 @@ function App() {
           allCategory={allCategory}
           deleteAllNotes={deleteAllNotes}
           handleDeleteNote={handleDeleteNote}
+          handleEditNote={handleEditNote}
         ></NoteList>
       </main>
       <Footer></Footer>

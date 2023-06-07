@@ -74,6 +74,10 @@ function App() {
     setNewId(1);
   };
 
+  const handleDeleteNote = (i) => {
+    setAllNotes(allNotes.filter((note, index) => index !== i));
+  };
+
   return (
     <>
       <header className="header">
@@ -103,6 +107,8 @@ function App() {
           allNotes={allNotes}
           newNote={newNote}
           allCategory={allCategory}
+          deleteAllNotes={deleteAllNotes}
+          handleDeleteNote={handleDeleteNote}
         ></NoteList>
       </main>
       <Footer></Footer>

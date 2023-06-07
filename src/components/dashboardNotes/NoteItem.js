@@ -21,10 +21,10 @@ const NoteItem = ({
           <p>Content</p>
         </div>
         <span></span>
-        <span>
+        <div>
           <i>icon edit-pencil</i>
           <i>icon trash</i>
-        </span>
+        </div>
       </div>
     </li>
   );

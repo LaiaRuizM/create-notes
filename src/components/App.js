@@ -69,6 +69,11 @@ function App() {
     }
   };
 
+  const deleteAllNotes = () => {
+    setAllNotes([]);
+    setNewId(1);
+  };
+
   return (
     <>
       <header className="header">

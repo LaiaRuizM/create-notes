@@ -1,14 +1,17 @@
 .note__item {
   margin: 1em;
-  // background: aqua;
   &__container {
+    transform: rotate(-6deg);
     text-decoration: none;
+    color: black;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 10em;
     width: 10em;
     padding: 0.5em 1em 1em;
+    box-shadow: 5px 5px 7px rgba(33, 33, 33, 1);
+    transition: linear 0.5s;
     &__text {
       font-weight: normal;
       display: flex;
@@ -38,20 +41,27 @@
 }
 
 .active {
+  transition: linear 0.3s;
   opacity: 1;
   .note__item__container {
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
+      box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+      transform: scale(1.2);
       position: relative;
       z-index: 5;
     }
     &__div {
       cursor: pointer;
       i:hover {
+        transform: scale(1.2);
       }
     }
   }
 }
+
 .unactive {
+  transition: linear 0.3s;
   opacity: 0.7;
 }

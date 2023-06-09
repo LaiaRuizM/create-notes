@@ -28,7 +28,9 @@ const NoteList = ({
     <section className="note__section">
       {userNotes.length !== 0 ? (
         <div className="note__section__btn">
-          <button onClick={deleteAllNotes}>Delete all notes</button>
+          <button className="button" onClick={deleteAllNotes}>
+            Delete all notes
+          </button>
         </div>
       ) : (
         ""

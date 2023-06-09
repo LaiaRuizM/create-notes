@@ -33,7 +33,7 @@ const PostedNote = ({
   };
 
   return (
-    <section>
+    <section className="posted__note">
       <form
         className="form"
         onReset={handleResetNote}
@@ -80,10 +80,10 @@ const PostedNote = ({
           </select>
         </div>
         <div className="form__btns">
-          <button type="submit">
+          <button className="buttons" type="submit">
             {noteIsEditing ? "Update note" : "Post note"}
           </button>
-          <button type="reset">
+          <button className="buttons" type="reset">
             {noteIsEditing ? "Dismiss changes" : "Dismiss note"}
           </button>
         </div>

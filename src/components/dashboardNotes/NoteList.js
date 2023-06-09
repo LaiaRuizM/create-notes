@@ -2,32 +2,31 @@ import NoteItem from "./NoteItem";
 import "../../styles/layouts/NoteList.scss";
 
 const NoteList = ({
-  allNotes,
+  userNotes,
   newNote,
   allCategory,
   deleteAllNotes,
   handleDeleteNote,
   handleEditNote,
 }) => {
-  const eachNote = allNotes.map((note, index) => {
+  const eachNote = userNotes.map((note, index) => {
     return (
       <NoteItem
+        key={note.id + note.title}
         index={index}
         id={note.id}
-        key={note.id + note.title}
         title={note.title}
-        content={note.title}
+        content={note.content}
         newNote={newNote}
         allCategory={allCategory}
         categoryTheme={note.categoryTheme}
         handleDeleteNote={handleDeleteNote}
-        handleEditNote={handleEditNote}
-      ></NoteItem>
+        handleEditNote={handleEditNote}></NoteItem>
     );
   });
   return (
     <section className="note__section">
-      {allNotes.length !== 0 ? (
+      {userNotes.length !== 0 ? (
         <div className="note__section__btn">
           <button onClick={deleteAllNotes}>Delete all notes</button>
         </div>

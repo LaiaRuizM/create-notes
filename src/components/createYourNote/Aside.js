@@ -19,8 +19,7 @@ const Aside = ({
         noteIsEditing={noteIsEditing}
         resetPostedNote={resetPostedNote}
         handleUpdateNote={handleUpdateNote}
-        handleInputNote={handleInputNote}
-      ></PostedNote>
+        handleInputNote={handleInputNote}></PostedNote>
     </aside>
   );
 };

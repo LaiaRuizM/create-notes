@@ -9,7 +9,7 @@ const PostedNote = ({
   handleUpdateNote,
   handleInputNote,
 }) => {
-  const handleInputChange = (ev) => {
+  const handleInputChange = ev => {
     const { name, value } = ev.target;
     handleInputNote(name, value);
   };
@@ -22,12 +22,12 @@ const PostedNote = ({
     );
   });
 
-  const handleResetNote = (event) => {
+  const handleResetNote = event => {
     event.preventDefault();
     resetPostedNote();
   };
 
-  const handlePostNote = (event) => {
+  const handlePostNote = event => {
     event.preventDefault();
     noteIsEditing ? handleUpdateNote() : handleCreateNewNote();
   };
@@ -37,18 +37,17 @@ const PostedNote = ({
       <form
         className="form"
         onReset={handleResetNote}
-        onSubmit={handlePostNote}
-      >
+        onSubmit={handlePostNote}>
         <legend className="form__legend">
           {noteIsEditing ? "Edit your note:" : "Create your note:"}
         </legend>
         <div className="form__container">
-          <label className="form__container__label" htmlFor="title">
+          <label htmlFor="title" className="form__container__label">
             Title:
           </label>
           <input
-            className="form__container__input"
             value={newNote.title}
+            className="form__container__input"
             type="text"
             required
             placeholder="Introduce your title:"
@@ -57,28 +56,26 @@ const PostedNote = ({
             title="You can introduce here the title of your to do"
             onChange={handleInputChange}
           />
-          <label className="form__container__label" htmlFor="content">
+          <label htmlFor="content" className="form__container__label">
             Description:
           </label>
           <textarea
-            className="form__container__textarea"
             value={newNote.content}
             name="content"
-            cols="25"
             rows="5"
+            cols="25"
             placeholder="Introduce your description"
             maxLength="100"
             onChange={handleInputChange}
-          ></textarea>
-          <label className="form__container__label" htmlFor="categoryTheme">
-            Category
+            className="form__container__textarea"></textarea>
+          <label htmlFor="categoryTheme" className="form__container__label">
+            Category:
           </label>
           <select
-            className="form__container__select"
             name="categoryTheme"
             onChange={handleInputChange}
             value={newNote.categoryTheme}
-          >
+            className="form__container__select">
             {categorySelected}
           </select>
         </div>

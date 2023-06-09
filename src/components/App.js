@@ -1,20 +1,20 @@
+import { useEffect, useState } from "react";
 import Aside from "./createYourNote/Aside";
 import NoteList from "./dashboardNotes/NoteList";
 import Footer from "./Footer";
-import "../styles/App.scss";
 import headerImg from "../images/header-img.png";
-import { useEffect, useState } from "react";
+import "../styles/App.scss";
 
 function App() {
   const [allNotes, setAllNotes] = useState([]);
   const [allCategory, setAllCategory] = useState([
-    { name: "general", color: "#86E1E0" },
-    { name: "activities", color: "#FDE780" },
-    { name: "work", color: "#B494C5" },
-    { name: "personal", color: "#C5EA8B" },
-    { name: "birthday", color: "#F7ABC7" },
-    { name: "urgent", color: "#FBBAA4" },
-    { name: "ASAP", color: "#EE9392" },
+    { name: "general", color: "#86e1e0" },
+    { name: "activities", color: "#Fde780" },
+    { name: "work", color: "#b494c5" },
+    { name: "personal", color: "#c5ea8b" },
+    { name: "birthday", color: "#f7abc7" },
+    { name: "urgent", color: "#fbbaa4" },
+    { name: "ASAP", color: "#ee9392" },
   ]);
   const [newId, setNewId] = useState(1);
   const [newNote, setNewNote] = useState({
@@ -39,7 +39,7 @@ function App() {
   });
 
   const handleCreateNewNote = () => {
-    setAllNotes((eachNote) => eachNote.concat(newNote));
+    setAllNotes(eachNote => eachNote.concat(newNote));
     setNewId(newId + 1);
     resetPostedNote();
   };
@@ -75,11 +75,11 @@ function App() {
     setNewId(1);
   };
 
-  const handleDeleteNote = (index) => {
-    setAllNotes(allNotes.filter((note, i) => i !== index));
+  const handleDeleteNote = index => {
+    setAllNotes(allNotes.filter((eachNote, i) => i !== index));
   };
 
-  const handleEditNote = (index) => {
+  const handleEditNote = index => {
     setNewNote(allNotes[index]);
     setNoteIsEditing(true);
     setIndexIsEditing(index);
@@ -108,16 +108,14 @@ function App() {
           noteIsEditing={noteIsEditing}
           resetPostedNote={resetPostedNote}
           handleUpdateNote={handleUpdateNote}
-          handleInputNote={handleInputNote}
-        ></Aside>
+          handleInputNote={handleInputNote}></Aside>
         <NoteList
-          allNotes={allNotes}
+          userNotes={allNotes}
           newNote={newNote}
           allCategory={allCategory}
           deleteAllNotes={deleteAllNotes}
           handleDeleteNote={handleDeleteNote}
-          handleEditNote={handleEditNote}
-        ></NoteList>
+          handleEditNote={handleEditNote}></NoteList>
       </main>
       <Footer></Footer>
     </>

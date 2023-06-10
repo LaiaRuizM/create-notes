@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "./static/css/main.852a0660.css",
+    "main.js": "./static/js/main.f1668f50.js",
+    "static/media/LaiaRuizM.png": "./static/media/LaiaRuizM.a4c6faf119f35bae4f8a.png",
+    "static/media/woodboard.jpg": "./static/media/woodboard.f905b90ce1bc375082af.jpg",
+    "static/media/header-img.png": "./static/media/header-img.44a3acf9b771df7bb03e.png",
+    "index.html": "./index.html",
+    "main.852a0660.css.map": "./static/css/main.852a0660.css.map",
+    "main.f1668f50.js.map": "./static/js/main.f1668f50.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.852a0660.css",
+    "static/js/main.f1668f50.js"
+  ]
+}

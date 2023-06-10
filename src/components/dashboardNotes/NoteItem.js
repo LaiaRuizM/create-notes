@@ -37,7 +37,7 @@ const NoteItem = ({
         <div className="note__item__container__text">
           <small>#{categoryTheme}</small>
           <h2>
-            {id}* {title}
+            {id}.- {title}
           </h2>
           <p>{content}</p>
         </div>

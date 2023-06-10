@@ -50,8 +50,8 @@ const PostedNote = ({
             className="form__container__input"
             type="text"
             required
-            placeholder="Introduce your title:"
-            maxLength="20"
+            placeholder="Introduce your title"
+            maxLength="12"
             name="title"
             title="You can introduce here the title of your to do"
             onChange={handleInputChange}
@@ -65,7 +65,7 @@ const PostedNote = ({
             rows="5"
             cols="25"
             placeholder="Introduce your description"
-            maxLength="100"
+            maxLength="95"
             onChange={handleInputChange}
             className="form__container__textarea"></textarea>
           <label htmlFor="categoryTheme" className="form__container__label">

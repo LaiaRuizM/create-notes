@@ -45,7 +45,12 @@ function App() {
   };
 
   const resetPostedNote = () => {
-    setNewNote({ ...newNote, title: ", content: ", categoryTheme: "general" });
+    setNewNote({
+      ...newNote,
+      title: "",
+      content: "",
+      categoryTheme: "general",
+    });
     setNoteIsEditing(false);
   };
 

@@ -10,9 +10,21 @@
       font-family: "Shantell Sans", cursive;
       font-size: 20px;
       text-decoration: 3px rgb(56, 213, 200) dotted underline;
+      @media (min-width: 768px) {
+        font-size: 28px;
+      }
+      @media (min-width: 1024px) {
+        font-size: 32px;
+      }
     }
     &--image {
-      width: 50%;
+      width: 70%;
+      @media (min-width: 768px) {
+        width: 90%;
+      }
+      @media (min-width: 1024px) {
+        width: 70%;
+      }
     }
   }
 }
@@ -21,12 +33,10 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
   }
-}
-
-.section {
-  background-color: aqua;
 }

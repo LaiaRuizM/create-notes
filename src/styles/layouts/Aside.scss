@@ -1,7 +1,6 @@
 .aside {
   background-image: url("../../images/woodboard.jpg");
   border-radius: 8px;
-  // box-shadow: 3px 4px 4px rgba(12, 12, 12, 0.9);
   padding: 20px;
   margin: 20px;
   width: 300px;
@@ -13,6 +12,12 @@
       font-weight: 900;
       text-align: center;
       text-transform: uppercase;
+      @media (min-width: 768px) {
+        font-size: 24px;
+      }
+      @media (min-width: 1024px) {
+        font-size: 28px;
+      }
     }
   }
 }

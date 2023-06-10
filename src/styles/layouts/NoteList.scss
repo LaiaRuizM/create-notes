@@ -1,6 +1,5 @@
 .note__section {
   width: 100%;
-  box-shadow: 4px 5px 8px rgba(0, 0, 0, 0.9);
   &__list {
     overflow: hidden;
     padding: 3em;
@@ -24,11 +23,23 @@
   border-radius: 6px;
   cursor: grab;
   font-size: 14px;
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+  @media (min-width: 1024px) {
+    font-size: 20px;
+  }
   &:hover {
     color: rgb(56, 38, 64);
     font-size: large;
     font-weight: bold;
     border: solid 1px rgb(105, 71, 105);
     border-radius: 80%;
+    @media (min-width: 768px) {
+      font-size: 20px;
+    }
+    @media (min-width: 1024px) {
+      font-size: 22px;
+    }
   }
 }
